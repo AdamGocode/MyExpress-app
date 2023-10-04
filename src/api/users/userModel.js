@@ -1,5 +1,8 @@
-const TodoSchema = new.mongoose.schema({
-    user_name: {
+const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema({
+    
+      name: {
         type: String,
         required: true,
       },
@@ -9,15 +12,14 @@ const TodoSchema = new.mongoose.schema({
         unique: true,
       },
 
-      createdAt: {
-        type: Date,
-        default: Date.now,
-      },
-      
       password: {
         type: String,
         required: true,
       },
-  });
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
 
-  module.exports = mongoose.model("Todo", TodoSchema);
+
+  });
